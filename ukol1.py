@@ -27,4 +27,4 @@ else:
     jmeno_zkracene = jmeno.capitalize()
 #vytvoření výsledného jména
 vysledne_jmeno = jmeno_zkracene + " " + prijmeni.capitalize()
-print(vysledne_jmeno)
+print(vysledne_jmeno) 
