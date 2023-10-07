@@ -1,1 +1,1 @@
-# ukol1-python-2023
+# Python-2023
