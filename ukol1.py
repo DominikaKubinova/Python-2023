@@ -28,13 +28,3 @@ else:
 #vytvoření výsledného jména
 vysledne_jmeno = jmeno_zkracene + " " + prijmeni.capitalize()
 print(vysledne_jmeno)
-
-""" řešení od Maryny: 
-parts = jmeno_a_prijmeni.split()
-res = parts[0][0].capitalize() + '. ' + parts[1][0].capitalize() + '.'
-print(res)
-nebo trochu pokročilejší:
-
-parts = jmeno_a_prijmeni.split()
-res = map(lambda x: x[0].capitalize() + '.', parts)
-print(' '.join(res))"""
