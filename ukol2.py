@@ -10,9 +10,9 @@ sklad = {
   "BC547C": 10
 }
 """Napiš software, který bude využívat prodavač v případě, že do obchodu přijde zákazník. Software se nejprve zeptá na kód součástky a poté na množství, které si zákazník chce koupit. Obě informace si ulož. Následně naprogramuj následující varianty:
-Pokud zadaný kód není ve slovníku, není součástka skladem. Vypiš tedy zprávu, že součástka není skladem.
-Pokud zadaná součástka na skladě je, ale je jí méně, než požaduje zákazník, vypiš text o tom, že lze prodat pouze omezené množství kusů. Následně součástku odeber ze slovníku, protože je vyprodaná.
-Pokud zadaná součástka na skladě je a je jí dostatek, vypiš informaci, že poptávku lze uspokojit v plné výši, a sniž počet součástek na skladě o množství požadované zákazníkem."""
+1. Pokud zadaný kód není ve slovníku, není součástka skladem. Vypiš tedy zprávu, že součástka není skladem.
+2. Pokud zadaná součástka na skladě je, ale je jí méně, než požaduje zákazník, vypiš text o tom, že lze prodat pouze omezené množství kusů. Následně součástku odeber ze slovníku, protože je vyprodaná.
+3. Pokud zadaná součástka na skladě je a je jí dostatek, vypiš informaci, že poptávku lze uspokojit v plné výši, a sniž počet součástek na skladě o množství požadované zákazníkem."""
 
 # dotaz na kód součástky od zákazníka
 kod_soucastky = input("Zadej kód součástky: ")
@@ -26,10 +26,9 @@ if kod_soucastky in sklad:
         print(f"Poptávku lze uspokojit v plné výši. Na skladě zbývá {sklad[kod_soucastky]} ks {kod_soucastky}.")
     else:
         print(f"Lze prodat pouze {dostupne_mnozstvi} ks {kod_soucastky}.")
+        odebrana_soucastka = sklad.pop(kod_soucastky)  #odeberu vyprodanou součástku
 else:
     print(f"Součástka není skladem.")
-
-
 
 
 """BONUS 1
