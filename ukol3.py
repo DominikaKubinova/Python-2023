@@ -23,4 +23,4 @@ print(results)
 
 # 3.Výsledný slovník ulož jako JSON do souboru prospech.json.
 with open("prospech03.json", mode="w", encoding="utf-8") as file:
-    json.dump(results, file, ensure_ascii = False) 
+    json.dump(results, file, ensure_ascii = False)
