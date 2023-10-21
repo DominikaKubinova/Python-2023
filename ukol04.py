@@ -20,4 +20,4 @@ if overeni_cisla(tel_cislo):
     cena = cena_zpravy(zprava)
     print(f"SMS zpráva Tě bude stát: {cena} Kč")
 else:
-    print("Zadej telefonní číslo ve správném formátu.")
+    print("Zadej telefonní číslo ve správném formátu.") 
