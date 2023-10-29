@@ -15,7 +15,7 @@ prumerne_teploty = []
 for den in teploty:
     prumerne_teploty.append(round(sum(den) / len(den),2))
 print(f"Seznam průměrných teplot pro každý den: {prumerne_teploty}.")
-#nebo pomocí list comprehension
+# řešení pomocí list comprehension
 prumerne_teploty = [round(sum(den) / len(den),2) for den in teploty]
 print(f"Seznam průměrných teplot pro každý den: {prumerne_teploty}.")
 
@@ -24,7 +24,7 @@ ranni_teploty = []
 for den in teploty:
     ranni_teploty.append(den[0])
 print(f"Seznam ranních teplot pro každý den: {ranni_teploty}.")
-#nebo pomocí list comprehension
+# řešení pomocí list comprehension
 ranni_teploty = [den[0] for den in teploty]
 print(f"Seznam ranních teplot pro každý den: {ranni_teploty}.")
 
@@ -33,7 +33,7 @@ nocni_teploty = []
 for den in teploty:
     nocni_teploty.append(den[3])   #nebo den[-1]
 print(f"Seznam nočních teplot pro každý den: {nocni_teploty}.")
-#nebo pomocí list comprehension
+# řešení pomocí list comprehension
 nocni_teploty = [den[3] for den in teploty]   #nebo den[-1]
 print(f"Seznam nočních teplot pro každý den: {nocni_teploty}.")
 
@@ -42,7 +42,7 @@ poledni_nocni_teploty = []
 for den in teploty:
     poledni_nocni_teploty.append([den[1], den[3]])    #nebo ([den[1], den[-1]])
 print(f"Seznam poledních a nočních teplot pro každý den: {poledni_nocni_teploty}.")
-#nebo pomocí list comprehension
+# řešení pomocí list comprehension
 poledni_nocni_teploty = [[den[1], den[3]] for den in teploty]   #nebo [den[1], den[-1]
 print(f"Seznam poledních a nočních teplot pro každý den: {poledni_nocni_teploty}.")
 
