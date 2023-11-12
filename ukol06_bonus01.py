@@ -30,8 +30,22 @@ Vytvoř metodu __init__() pro třídu Auto. Registrační značku, značku a typ
 #06
 """Otestuj, že program nedovolí půjčit stejné auto dvakrát."""
 
+
+# NEPOVINNÝ BONUS
+
+#07
+"""Přidej třídě Auto metodu vrat_auto(), která bude mít (krom obligátního self) 2 parametry, a to je stav tachometru při vrácení a počet dní, po které zákazník auto používal. Ulož stav tachometru do atributu objektu. Nastav vozidlo jako volné."""
+
+#08
+"""Dále ve funkci vypočti cenu za půjčení. Cena je 400 Kč na den, pokud měl zákazník celkem auto méně než týden, a 300 Kč na den, pokud měl zákazník auto déle. Cena je stejná pro obě auta. Vlož cenu do nějakého informativního textu a ten vrať pomocí klíčového slova return."""
+
+
+
 #01
 class Auto:
+
+    cena_pujcovneho = 400   #méně než týden
+    cena_pujcovneho_delsi_nez_tyden = 300    #týden (včetně) a více
 
     def __init__(self, registracni_znacka, typ_vozidla, najete_km, volne = True):
         self.registracni_znacka = registracni_znacka
@@ -51,6 +65,20 @@ class Auto:
     def get_info(self):
         return f"Vozidlo s registrační značkou {self.registracni_znacka} a typem {self.typ_vozidla}."
     
+     #07 a #08
+    def vrat_auto(self, stav_tachometru, pocet_dni_uzivani, volne = True):
+        self.stav_tachometru = stav_tachometru
+        self.pocet_dni_uzivani = pocet_dni_uzivani
+        self.volne = True
+        najete_km = stav_tachometru - self.najete_km
+        
+        if pocet_dni_uzivani >= 7:
+            celkova_cena = Auto.cena_pujcovneho_delsi_nez_tyden * pocet_dni_uzivani
+        else:
+            pocet_dni_uzivani < 7
+            celkova_cena = Auto.cena_pujcovneho * pocet_dni_uzivani
+        return f"Cena půjčovného je {celkova_cena}"
+    
 
 #02
 auto1 = Auto("4A2 3020", "Peugeot 403 Cabrio", 47534, True)
@@ -67,3 +95,10 @@ elif volba_znacky == "Škoda":
     print(auto2.pujc_auto())
 else:
     print("Zvolte si odpovídající značku z uvedených možností.")
+
+#08
+stav_tachometru = int(input("Zadej stav tachometru při vrácení auta: "))
+pocet_dni_uzivani = int(input("Zadej počet dní, po kterou jste měl auto půjčené: "))
+
+print(auto1.vrat_auto(stav_tachometru, pocet_dni_uzivani))
+print(auto2.vrat_auto(stav_tachometru, pocet_dni_uzivani))
